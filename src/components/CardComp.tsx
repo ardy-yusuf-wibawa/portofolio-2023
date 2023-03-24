@@ -4,7 +4,7 @@ import { myDev } from '../dev'
 
 const CardComp = (): React.ReactElement => {
   return (
-    <div className='container mx-auto lg:w-(90%) px-4 sm:w-full w-[1/4] sm:py-10 grid sm:grid-cols-2 sm:gap-[2.3vw] py-[130px] pb-10 grid-cols-2 gap-[4vw]'>
+    <div className='container mx-auto lg:w-(90%) px-4 sm:w-full w-[1/4] sm:py-10 grid sm:grid-cols-2 sm:gap-[2.3vw] pb-10 grid-rows-1  gap-[4vw]'>
       {Object.keys(myDev).map((v, i) => (
         <Card
           key={i}
@@ -16,7 +16,7 @@ const CardComp = (): React.ReactElement => {
           <p className='font-normal text-gray-700 dark:text-gray-400 hidden sm:block'>
             {myDev[v].description}
           </p>
-          <div className='container sm:gap-0 gap-1 grid sm:grid-flow-col'>
+          <div className='container sm:gap-2 gap-1 grid sm:grid-cols-3 max-w-xs'>
 
           {myDev[v].ingredients.length > 0 && (
             <span className='bg-red-300 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300'>
