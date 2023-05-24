@@ -2,7 +2,6 @@
   "name": "portofolio-2023",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ardy-yusuf-wibawa.github.io/Portofolio-2023/",
   "dependencies": {
     "@fontsource/source-sans-pro": "^5.0.1",
     "@headlessui/react": "^1.7.13",
@@ -16,7 +15,6 @@
     "@types/react-dom": "^18.0.11",
     "flowbite": "^1.6.4",
     "flowbite-react": "^0.4.2",
-    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
@@ -24,8 +22,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
