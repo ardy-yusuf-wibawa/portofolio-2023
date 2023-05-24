@@ -1,7 +1,8 @@
 {
-  "name": "tugas-bootcamp",
+  "name": "portofolio-2023",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ardy-yusuf-wibawa.github.io/Portofolio-2023/",
   "dependencies": {
     "@fontsource/source-sans-pro": "^5.0.1",
     "@headlessui/react": "^1.7.13",
