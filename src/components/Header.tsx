@@ -2,40 +2,41 @@
 import { Link } from 'react-router-dom'
 import HamburgerBar from './HamburgerBar'
 import React from 'react'
+import '@fontsource/source-sans-pro'
 // header function
 function Header(): React.ReactElement {
   return (
-    <div className='top-0 left-0 z-[50] w-[100vw] h-[100px] bg-white flex flex-row justify-between items-center fixed mx-auto p-4 sm:p-6'>
+    <div className='fixed top-0 left-0 z-[50] mx-auto flex h-[100px] w-[100vw] flex-row items-center justify-between bg-white p-4 sm:p-6'>
       <div>
         <a
           href='/'
-          className=' sm:text-[40px] font-semibold text-[30px] '>
+          className=' font-sansPro text-[30px] font-semibold sm:text-[40px] '>
           Ardy Yusuf
         </a>
       </div>
-      <div className='pt-[40px] relative left-8 justify-between items-center hidden lg:block'>
-        <div className='flex gap-[10px] items-center justify-center'>
+      <div className='relative left-8 hidden items-center justify-between pt-[40px] lg:block'>
+        <div className='flex items-center justify-center gap-[10px]'>
           <Link
             to='/'
-            className='hover:border-b-[3px] border-red-500'>
+            className='border-red-500 hover:border-b-[3px]'>
             Home
           </Link>
           <Link
             to='/about'
-            className='hover:border-b-[3px] border-red-500'>
+            className='border-red-500 hover:border-b-[3px]'>
             About
           </Link>
           <Link
             to='/portofolio'
-            className='hover:border-b-[3px] border-red-500'>
+            className='border-red-500 hover:border-b-[3px]'>
             Portfolio
           </Link>
         </div>
       </div>
-      <div className='flex gap-4 w-shrink my-auto flex-row items-center justify-between'>
+      <div className='w-shrink my-auto flex flex-row items-center justify-between gap-4'>
         <a
           href='https://wa.me/+628111299144'
-          className='border-2 rounded-full p-1 justify-center items-center sm-only:text-sm hidden lg:block'>
+          className='sm-only:text-sm hidden items-center justify-center rounded-full border-2 p-1 lg:block'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='#ff2800'
@@ -48,7 +49,7 @@ function Header(): React.ReactElement {
 
         <a
           href='https://www.linkedin.com'
-          className='border-2 rounded-full p-1 justify-center items-center sm-only:text-sm hidden lg:block'>
+          className='sm-only:text-sm hidden items-center justify-center rounded-full border-2 p-1 lg:block'>
           <svg
             stroke='#ff2800'
             fill='#ff2800'
@@ -63,9 +64,9 @@ function Header(): React.ReactElement {
 
         <a
           href='https://www.github.com'
-          className='border-2 rounded-full p-1 justify-center items-center sm-only:text-sm hidden lg:block'>
+          className='sm-only:text-sm hidden items-center justify-center rounded-full border-2 p-1 lg:block'>
           <svg
-            className='w-5 h-5'
+            className='h-5 w-5'
             fill='#ff2800'
             viewBox='0 0 24 24'>
             <path
@@ -78,7 +79,7 @@ function Header(): React.ReactElement {
 
         <a
           href='https://web.facebook.com'
-          className='border-2 rounded-full p-1 hidden lg:block justify-center items-center sm-only:text-sm'>
+          className='sm-only:text-sm hidden items-center justify-center rounded-full border-2 p-1 lg:block'>
           <svg
             stroke='#ff2800'
             fill='#ff2800'
@@ -95,7 +96,7 @@ function Header(): React.ReactElement {
 
         <a
           href='https://www.instagram.com'
-          className='border-2 rounded-full p-1 lg:block hidden justify-center items-center sm-only:text-sm'>
+          className='sm-only:text-sm hidden items-center justify-center rounded-full border-2 p-1 lg:block'>
           <svg
             stroke='#ff2800'
             fill='#ff2800'
@@ -110,7 +111,7 @@ function Header(): React.ReactElement {
 
         <a
           href='https://twitter.com'
-          className='border-2 rounded-full p-1 lg:block hidden justify-center items-center sm-only:text-sm'>
+          className='sm-only:text-sm hidden items-center justify-center rounded-full border-2 p-1 lg:block'>
           <svg
             stroke='#ff2800'
             fill='#ff2800'

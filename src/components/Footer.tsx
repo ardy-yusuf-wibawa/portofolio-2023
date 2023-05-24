@@ -8,7 +8,7 @@ const Footer = (): React.ReactElement => {
         <div className='md:flex md:justify-between'>
           <div className='mb-6 md:mb-0'></div>
           <div className='hidden sm:block'>
-            <div className='grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3'>
+            <div className='grid gap-8 sm:gap-6 sm:grid-cols-2'>
               <div>
                 <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>
                   Resources
@@ -51,27 +51,6 @@ const Footer = (): React.ReactElement => {
                   </li>
                 </ul>
               </div>
-              <div>
-                <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>
-                  Legal
-                </h2>
-                <ul className='text-gray-600 dark:text-gray-400'>
-                  <li className='mb-4'>
-                    <Link
-                      to='#'
-                      className='hover:underline'>
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to='#'
-                      className='hover:underline'>
-                      Terms &amp; Conditions
-                    </Link>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -100,9 +79,7 @@ const Footer = (): React.ReactElement => {
                   clipRule='evenodd'
                 />
               </svg>
-              <span className='sr-only'>
-                Facebook page
-              </span>
+              <span className='sr-only'>Facebook page</span>
             </Link>
             <Link
               to='#'
@@ -115,9 +92,7 @@ const Footer = (): React.ReactElement => {
                 viewBox='0 0 24 24'>
                 <path d='M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z' />
               </svg>
-              <span className='sr-only'>
-                Instagram page
-              </span>
+              <span className='sr-only'>Instagram page</span>
             </Link>
             <Link
               to='#'
@@ -128,9 +103,7 @@ const Footer = (): React.ReactElement => {
                 viewBox='0 0 24 24'>
                 <path d='M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84' />
               </svg>
-              <span className='sr-only'>
-                Twitter page
-              </span>
+              <span className='sr-only'>Twitter page</span>
             </Link>
             <Link
               to='#'
@@ -145,9 +118,7 @@ const Footer = (): React.ReactElement => {
                   clipRule='evenodd'
                 />
               </svg>
-              <span className='sr-only'>
-                GitHub account
-              </span>
+              <span className='sr-only'>GitHub account</span>
             </Link>
             <Link
               to='#'
@@ -163,9 +134,7 @@ const Footer = (): React.ReactElement => {
                   clipRule='evenodd'
                 />
               </svg>
-              <span className='sr-only'>
-                Instagram
-              </span>
+              <span className='sr-only'>Instagram</span>
             </Link>
             <Link
               to='#'
@@ -180,9 +149,7 @@ const Footer = (): React.ReactElement => {
                 xmlns='http://www.w3.org/2000/svg'>
                 <path d='M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z'></path>
               </svg>
-              <span className='sr-only'>
-                Instagram
-              </span>
+              <span className='sr-only'>Instagram</span>
             </Link>
           </div>
         </div>

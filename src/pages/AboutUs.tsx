@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import SpeedDial from '../components/SpeedDial'
 import ProfileCard from '../components/ProfileCard'
 import PortfolioComp from '../components/PortofolioComp'
 import ContactUs from '../components/ContactForm'
@@ -9,7 +8,6 @@ import ContactUs from '../components/ContactForm'
 const AboutUs = (): React.ReactElement => {
   return (
     <div className='z-[1000] w-full h-[100vh] mx-auto px-4'>
-      <SpeedDial />
       <div className='static'>
         <Header />
       </div>

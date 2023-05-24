@@ -5,9 +5,12 @@ module.exports = {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {}
-  },
-  plugins: [
-    require('flowbite/plugin')
-  ]
+    fontFamily: {
+      sansPro: ['Source Sans Pro', 'sans-serif'],
+      extend: {}
+    },
+    plugins: [
+      require('flowbite/plugin')
+    ]
+  }
 }
