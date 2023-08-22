@@ -1,6 +1,6 @@
 import Footer from '../components/Footer'
 import React from 'react'
-import Header from '../components/Header'
+import Header from '../components/header/Header'
 import CardComp from '../components/CardComp'
 
 const ListPage = (): React.ReactElement => {

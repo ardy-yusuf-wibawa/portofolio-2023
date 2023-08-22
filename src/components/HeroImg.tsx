@@ -25,7 +25,7 @@ const HeroImg = (): React.ReactElement => {
           <Link
             className='relative flex items-center justify-center
             rounded-lg font-medium hover:shadow-[0_12px_32px_0px_rgba(128,0,0,0.7)]
-            text-white bg-rose-700 hover:scale-125 sm:py-[12px] sm:px-[26px] py-2 px-2 text-xs
+            text-white bg-rose-700 transition-all hover:scale-125 sm:py-[12px] sm:px-[26px] py-2 px-2 text-xs
             sm:text-sm lg:text-base sm:w-2/4 sm:mx-0 w-[90%] mx-auto'
             to='/portofolio'>
             {' '}

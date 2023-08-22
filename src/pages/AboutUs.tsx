@@ -1,8 +1,7 @@
 import React from 'react'
-import Header from '../components/Header'
+import Header from '../components/header/Header'
 import Footer from '../components/Footer'
 import ProfileCard from '../components/ProfileCard'
-import PortfolioComp from '../components/PortofolioComp'
 import ContactUs from '../components/ContactForm'
 
 const AboutUs = (): React.ReactElement => {
@@ -14,9 +13,6 @@ const AboutUs = (): React.ReactElement => {
       <main>
         <div className='relative justify-center flex items-center pt-[100px] '>
           <ProfileCard />
-        </div>
-        <div className='relative justify-center flex items-center'>
-          <PortfolioComp />
         </div>
         <div className='relative justify-center flex items-center'>
           <ContactUs />
