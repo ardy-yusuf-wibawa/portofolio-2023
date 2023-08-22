@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import HamburgerBar from './hamburgerbar/HamburgerBar'
 import React from 'react'
 import '@fontsource/source-sans-pro'
-import { navList } from '../layouts/constants'
-import { SvgIcon } from './svg'
-import { Logo } from './logo'
+import { navList } from '../layouts/Constants'
+import { SvgIcon } from './Svg'
+import { Logo } from './Logo'
 // header function
 function Header(): React.ReactElement {
   return (

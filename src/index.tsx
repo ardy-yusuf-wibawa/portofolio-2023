@@ -5,9 +5,9 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom'
-import IndexPage from './pages/IndexPage'
-import ListPage from './pages/ListPage'
-import AboutUs from './pages/AboutUs'
+import IndexPage from './pages/indexPage'
+import ListPage from './pages/listPage'
+import AboutUs from './pages/aboutUs'
 
 const router = createBrowserRouter([
   {

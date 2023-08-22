@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import { inputList } from './layouts/constants'
+import { inputList } from './layouts/Constants'
 
 interface FormData {
   id: string

@@ -1,5 +1,5 @@
 import React from 'react'
-import { navList } from '../../layouts/constants'
+import { navList } from '../../layouts/Constants'
 import { Link } from 'react-router-dom'
 
 export const MenuBar = (): React.ReactElement => (

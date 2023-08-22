@@ -1,7 +1,7 @@
 import React from 'react'
-import { FootNote } from './layouts/footnote'
-import { SvgIcon } from './header/svg'
-import { footListFollow, footListResources } from './layouts/constants'
+import { FootNote } from './layouts/FootNote'
+import { SvgIcon } from './header/Svg'
+import { footListFollow, footListResources } from './layouts/Constants'
 
 const Footer = (): React.ReactElement => {
   return (

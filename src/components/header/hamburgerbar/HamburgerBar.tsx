@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { MenuBar } from './menubar'
-import { FootNote } from '../../layouts/footnote'
-import { SvgIcon } from '../svg'
-import { Logo } from '../logo'
+import { MenuBar } from './Menubar'
+import { FootNote } from '../../layouts/FootNote'
+import { SvgIcon } from '../Svg'
+import { Logo } from '../Logo'
 
 const HamburgerBar = (): React.ReactElement => {
   const buttonRef = useRef<HTMLButtonElement>(null)
