@@ -35,6 +35,6 @@ export const myDev: Record<string, Dev> = {
     version: '0.1.0',
     ingredients: ['HTML ', 'Tailwind CSS ', 'ReactJS', 'typescript'],
     description:
-      'Website ini dibuat sebagai tugas pembelajaran ReactJS dan sekaligus sebagai portofolio kegiatan selama 2023 ini'
+      'Website ini dibuat sebagai tugas pembelajaran ReactJS dan sekaligus sebagai portofolio kegiatan selama 2023 ini adasdasd'
   }
 }
