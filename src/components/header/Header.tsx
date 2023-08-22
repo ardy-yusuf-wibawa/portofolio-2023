@@ -9,7 +9,7 @@ import { Logo } from './Logo'
 // header function
 function Header(): React.ReactElement {
   return (
-    <div className='fixed top-0 left-0 z-[50] flex h-[100px] w-[100%] flex-row items-center justify-between p-4 sm:p-6'>
+    <div className='fixed top-0 left-0 z-[50] flex h-[100px] w-[100%] flex-row items-center bg-white justify-between p-4 sm:p-6'>
       <Logo />
       <div className='collapse relative left-8 items-center justify-between pt-[40px] lg:visible'>
         <div className='flex items-center justify-center gap-[10px]'>
