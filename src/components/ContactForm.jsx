@@ -20,7 +20,10 @@ const ContactUs = () => {
   const form = useRef()
 
   const [submissionStatus, setSubmissionStatus] = useState('idle')
-  // (useState < 'idle') | 'pending' | 'success' | ('error' > 'idle')
+
+  const clearDisplay = (event) => {
+    event.stopPropagation()
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -69,14 +72,10 @@ const ContactUs = () => {
         return (
           <div
             className='fixed inset-0 z-50 flex items-center justify-center'
-            onClick={() => {
-              setSubmissionStatus('idle')
-            }}>
+            onClick={setSubmissionStatus}>
             <div
               className='bg-gray-0 rounded-lg border border-gray-100 bg-opacity-0 bg-clip-padding p-10 backdrop-blur-md backdrop-filter'
-              onClick={(e) => {
-                e.stopPropagation()
-              }}>
+              onClick={clearDisplay}>
               <div className='text-center'>
                 <svg
                   className='mx-auto h-10 w-10 text-green-600 dark:text-green-400'
@@ -199,6 +198,7 @@ const ContactUs = () => {
                   {list.text}
                 </label>
                 <input
+                  autoComplete='on'
                   type={list.type}
                   id={list.name}
                   name={list.name}
@@ -217,6 +217,7 @@ const ContactUs = () => {
               Your message
             </label>
             <textarea
+              autoComplete='on'
               id='message'
               name='message'
               value={formData.message}

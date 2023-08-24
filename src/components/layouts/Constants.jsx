@@ -42,7 +42,7 @@ export const inputList = [
     name: 'email'
   },
   {
-    type: 'text',
+    type: 'subject',
     text: 'Subject',
     name: 'subject'
   }
