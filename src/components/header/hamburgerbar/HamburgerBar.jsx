@@ -4,16 +4,16 @@ import { FootNote } from '../../layouts/FootNote'
 import { SvgIcon } from '../Svg'
 import { Logo } from '../Logo'
 
-const HamburgerBar = (): React.ReactElement => {
-  const buttonRef = useRef<HTMLButtonElement>(null)
+const HamburgerBar = () => {
+  const buttonRef = useRef()
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent): void => {
+    const handleClickOutside = (event)=> {
       if (
         buttonRef.current != null &&
         'contains' in buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node)
+        !buttonRef.current.contains(event.target)
       ) {
         setIsOpen(false)
       }
@@ -25,7 +25,7 @@ const HamburgerBar = (): React.ReactElement => {
     }
   }, [buttonRef])
 
-  const handleToggle = (): void => {
+  const handleToggle = ()=> {
     setIsOpen(!isOpen)
   }
   return (

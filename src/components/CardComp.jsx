@@ -1,16 +1,9 @@
 import React from 'react'
 import { Card } from 'flowbite-react'
-import { myDev, type Dev } from '../datas/dev'
+import { myDev } from '../datas/dev'
 import { Link } from 'react-router-dom'
 
-interface TechStackTagProps {
-  techStack: string
-}
-interface LinkPathProps {
-  paths?: Array<{ label: string, url: string }>
-}
-
-const techStackColors: Record<string, string> = {
+const techStackColors = {
   HTML: 'red',
   CSS: 'blue',
   'Tailwind CSS': 'blue',
@@ -20,10 +13,10 @@ const techStackColors: Record<string, string> = {
   Typescript: 'yellow',
   MySQL: 'purple',
   'React Native': 'red'
-  // Add more tech stacks and colors as needed
+  // Add more techStack stacks and colors as needed
 }
 
-const TechStackTag: React.FC<TechStackTagProps> = ({ techStack }) => {
+const TechStackTag = ({ techStack }) => {
   const colorClass = `bg-${techStackColors[techStack]}-300`
   const textColorClass = `text-${techStackColors[techStack]}-800`
 
@@ -35,7 +28,7 @@ const TechStackTag: React.FC<TechStackTagProps> = ({ techStack }) => {
   )
 }
 
-const LinkPath: React.FC<LinkPathProps> = ({ paths = [] }) => {
+const LinkPath = ({ paths }) => {
   return (
     <>
       {paths.map((path, index) => (
@@ -55,11 +48,11 @@ const LinkPath: React.FC<LinkPathProps> = ({ paths = [] }) => {
   )
 }
 
-const CardComp: React.FC = () => {
+const CardComp = () => {
   return (
     <div className='lg:w-(90%) container mx-auto grid w-[1/4] grid-rows-1 gap-[4vw] px-4 pb-10 sm:w-full sm:grid-cols-2 sm:gap-[2.3vw]  sm:py-10'>
       {Object.keys(myDev).map((key, i) => {
-        const dev: Dev = myDev[key]
+        const dev = myDev[key]
 
         return (
           <Card
@@ -75,11 +68,11 @@ const CardComp: React.FC = () => {
             <LinkPath paths={dev.paths} />
             <div className='container grid max-w-[35rem] gap-1 sm:gap-2 lg:grid-cols-5'>
               {dev.techStack.map(
-                (tech, index) =>
+                (techStack, index) =>
                   index < 5 && (
                     <TechStackTag
                       key={index}
-                      techStack={tech}
+                      techStack={techStack}
                     />
                   )
               )}

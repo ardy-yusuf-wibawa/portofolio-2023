@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react'
 
-const ProfileCard = (): React.ReactElement => {
+const ProfileCard = () => {
   return (
     <div className='w-full max-w-sm items-center justify-center self-center'>
       <div className='rounded-lg border border-gray-200 bg-white pt-[50px] shadow dark:border-gray-700 dark:bg-gray-800'>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TimeLine = (): React.ReactElement => {
+const TimeLine = () => {
   return (
     <>
       <ol className='relative border-l border-gray-200 pt-10 dark:border-gray-700'>

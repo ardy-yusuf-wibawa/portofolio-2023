@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import ProfileCard from '../components/ProfileCard'
 import ContactUs from '../components/ContactForm'
 
-const AboutUs = (): React.ReactElement => {
+const AboutUs = () => {
   return (
     <div className='z-[1000] w-full h-[100vh] mx-auto px-4'>
       <div className='static'>

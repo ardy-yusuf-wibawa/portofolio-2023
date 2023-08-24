@@ -3,7 +3,7 @@ import { FootNote } from './layouts/FootNote'
 import { SvgIcon } from './header/Svg'
 import { footListFollow, footListResources } from './layouts/Constants'
 
-const Footer = (): React.ReactElement => {
+const Footer = () => {
   return (
     <footer className='w-full'>
       <div className='p-4 sm:p-6'>

@@ -3,7 +3,7 @@ import React from 'react'
 import Header from '../components/header/Header'
 import CardComp from '../components/CardComp'
 
-const ListPage = (): React.ReactElement => {
+const ListPage = () => {
   return (
     <div>
       <div>

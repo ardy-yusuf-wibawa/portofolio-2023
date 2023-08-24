@@ -1,13 +1,4 @@
-export interface Dev {
-  name: string
-  img: string
-  paths?: Array<{ label: string, url: string }>
-  version: string
-  techStack: string[]
-  description: string
-}
-
-export const myDev: Record<string, Dev> = {
+export const myDev = {
   Dev_1: {
     name: 'Multimedia Web APP',
     img: './img/multimedia.png',
@@ -58,7 +49,7 @@ export const myDev: Record<string, Dev> = {
       { label: 'Git', url: 'https://github.com/ardy-yusuf-wibawa/portofolio-2023.git' }
     ],
     version: '0.1.0',
-    techStack: ['ReactJS', 'Tailwind CSS', 'Typescript'],
+    techStack: ['ReactJS', 'Tailwind CSS'],
     description: 'Web development portofolio.'
   },
   Dev_6: {

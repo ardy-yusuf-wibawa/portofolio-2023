@@ -1,19 +1,9 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { inputList } from './layouts/Constants'
 
-interface FormData {
-  id: string
-  email: string
-  subject: string
-  message: string
-  [key: string]: string
-}
-
-const ContactUs = (): React.ReactElement => {
-  const [formData, setFormData] = useState<FormData>({
+const ContactUs = () => {
+  const [formData, setFormData] = useState({
     id: new Date().toLocaleString('en-US', {
       timeZone: 'Asia/Jakarta',
       timeZoneName: 'short'
@@ -27,29 +17,20 @@ const ContactUs = (): React.ReactElement => {
   const serviceId = process.env.REACT_APP_YOUR_SERVICE_ID
   const templateId = process.env.REACT_APP_YOUR_TEMPLATE_ID
   const publicKey = process.env.REACT_APP_YOUR_PUBLIC_KEY
-  const form = useRef<HTMLFormElement | null>(null)
+  const form = useRef()
 
-  const [submissionStatus, setSubmissionStatus] = useState<
-  'idle' | 'pending' | 'success' | 'error'
-  >('idle')
+  const [submissionStatus, setSubmissionStatus] = useState('idle')
+  // (useState < 'idle') | 'pending' | 'success' | ('error' > 'idle')
 
-  const handleSubmit = async (event: React.FormEvent): Promise<void> => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
 
     if (!apiKey || !serviceId || !templateId || !publicKey) {
       alert('One or more environment variables are not defined')
       return
     }
-
     if (form.current != null) {
-      emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
-        (result) => {
-          // console.log(result.text)
-        },
-        (error) => {
-          alert(error.text)
-        }
-      )
+      emailjs.sendForm(serviceId, templateId, form.current, publicKey).then()
     }
 
     setSubmissionStatus('pending')
@@ -64,7 +45,7 @@ const ContactUs = (): React.ReactElement => {
         body: JSON.stringify(formData)
       })
 
-      if (response.ok) {
+      if (response) {
         setSubmissionStatus('success')
       } else {
         setSubmissionStatus('error')
@@ -75,14 +56,14 @@ const ContactUs = (): React.ReactElement => {
     }
   }
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  const handleChange = (event) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value
     })
   }
 
-  const getStatusMessage = (): JSX.Element => {
+  const getStatusMessage = () => {
     switch (submissionStatus) {
       case 'success':
         return (
@@ -92,7 +73,7 @@ const ContactUs = (): React.ReactElement => {
               setSubmissionStatus('idle')
             }}>
             <div
-              className='rounded-lg bg-black bg-opacity-50 p-4 shadow-lg'
+              className='bg-gray-0 rounded-lg border border-gray-100 bg-opacity-0 bg-clip-padding p-10 backdrop-blur-md backdrop-filter'
               onClick={(e) => {
                 e.stopPropagation()
               }}>
@@ -118,20 +99,60 @@ const ContactUs = (): React.ReactElement => {
         )
       case 'pending':
         return (
-          <div className='fixed inset-0 mx-auto z-50 flex items-center justify-center'>
-            <div className='rounded-lg bg-black bg-opacity-50 p-4 shadow-lg'>
-              <div className='flex animate-bounce items-center space-x-2'>
+          <div className='fixed inset-0 z-50 mx-auto flex items-center justify-center'>
+            <div className='bg-gray-0 rounded-lg border border-gray-100 bg-opacity-0 bg-clip-padding p-10 backdrop-blur-md backdrop-filter'>
+              <div className='flex items-center space-x-2'>
                 <svg
-                  className='h-5 w-5 animate-spin text-blue-600 dark:text-blue-400'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                  xmlns='http://www.w3.org/2000/svg'>
+                  version='1.1'
+                  id='L7'
+                  xmlns='http://www.w3.org/2000/svg'
+                  x='0px'
+                  y='0px'
+                  viewBox='0 0 100 100'
+                  enableBackground='new 0 0 100 100'
+                  xmlSpace='preserve'>
                   <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M12 4v.01M12 8v.01M12 12v.01M12 16v.01M12 20v.01M4.93 4.93l.01-.011M21.17 21.17l-.01.011M4.93 19.07L19.07 4.93'></path>
+                    fill='#2563eb'
+                    d='M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
+  c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z'>
+                    <animateTransform
+                      attributeName='transform'
+                      attributeType='XML'
+                      type='rotate'
+                      dur='2s'
+                      from='0 50 50'
+                      to='360 50 50'
+                      repeatCount='indefinite'
+                    />
+                  </path>
+                  <path
+                    fill='#2563eb'
+                    d='M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7
+  c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z'>
+                    <animateTransform
+                      attributeName='transform'
+                      attributeType='XML'
+                      type='rotate'
+                      dur='1s'
+                      from='0 50 50'
+                      to='-360 50 50'
+                      repeatCount='indefinite'
+                    />
+                  </path>
+                  <path
+                    fill='#2563eb'
+                    d='M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5
+  L82,35.7z'>
+                    <animateTransform
+                      attributeName='transform'
+                      attributeType='XML'
+                      type='rotate'
+                      dur='2s'
+                      from='0 50 50'
+                      to='360 50 50'
+                      repeatCount='indefinite'
+                    />
+                  </path>
                 </svg>
                 <span className='text-blue-600 dark:text-blue-400'>Please wait</span>
               </div>
@@ -140,8 +161,14 @@ const ContactUs = (): React.ReactElement => {
         )
       case 'error':
         return (
-          <div className='error mt-4 text-center text-red-600 dark:text-red-400'>
-            An error occurred. Please try again later.
+          <div className='fixed inset-0 z-50 mx-auto flex items-center justify-center'>
+            <div className='bg-gray-0 rounded-lg border border-gray-100 bg-opacity-0 bg-clip-padding p-10 backdrop-blur-md backdrop-filter'>
+              <div className='flex items-center space-x-2'>
+                <div className='mt-4 text-center text-red-600 dark:text-red-400'>
+                  An error occurred. Please try again later.
+                </div>
+              </div>
+            </div>
           </div>
         )
       default:

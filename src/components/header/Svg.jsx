@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const SvgIcon = (): React.ReactElement => (
+export const SvgIcon = () => (
   <>
     <a
       href='https://wa.me/+628111299144'

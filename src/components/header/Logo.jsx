@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Logo = (): React.ReactElement => (
+export const Logo = () => (
   <header>
     <a
       href='/'

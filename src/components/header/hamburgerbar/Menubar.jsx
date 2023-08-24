@@ -2,7 +2,7 @@ import React from 'react'
 import { navList } from '../../layouts/Constants'
 import { Link } from 'react-router-dom'
 
-export const MenuBar = (): React.ReactElement => (
+export const MenuBar = () => (
   <div>
     <ul>
       {navList.map((menu, index) => {

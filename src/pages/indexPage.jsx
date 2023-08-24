@@ -5,7 +5,7 @@ import HeroImg from '../components/HeroImg'
 import TimeLine from '../components/Timeline'
 import CardComp from '../components/CardComp'
 
-const IndexPage = (): React.ReactElement => {
+const IndexPage = () => {
   return (
     <>
       <main className='static z-[1000] h-full w-full bg-white'>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Carousel } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 
-const HeroImg = (): React.ReactElement => {
+const HeroImg = () => {
   return (
     <div className='flex relative justify-between sm:pt-[100px] sm:pb-0 py-[30px]'>
       <div className=' container mx-auto lg:w-[90%] px-4 w-full flex justify-between'>

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/space-before-function-paren */
 import { Link } from 'react-router-dom'
 import HamburgerBar from './hamburgerbar/HamburgerBar'
 import React from 'react'
@@ -7,7 +6,7 @@ import { navList } from '../layouts/Constants'
 import { SvgIcon } from './Svg'
 import { Logo } from './Logo'
 // header function
-function Header(): React.ReactElement {
+function Header() {
   return (
     <div className='fixed top-0 left-0 z-[50] flex h-[100px] w-[100%] flex-row items-center bg-white justify-between p-4 sm:p-6'>
       <Logo />
