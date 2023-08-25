@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <IndexPage />
   },
   {
-    path: '/portofolio',
+    path: '/portfolio',
     element: <ListPage />
   },
   {

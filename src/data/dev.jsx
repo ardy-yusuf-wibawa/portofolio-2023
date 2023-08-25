@@ -39,7 +39,7 @@ export const myDev = {
     ],
     version: '0.1.0',
     techStack: ['ReactJS', 'Tailwind CSS', 'ExpressJS', 'Typescript', 'MySQL'],
-    description: 'Final Project Bootcamp harisenin.com.'
+    description: 'Final Project Boot camp harisenin.com.'
   },
   Dev_5: {
     name: 'Ardy Yusuf 2023',
@@ -50,7 +50,7 @@ export const myDev = {
     ],
     version: '0.1.0',
     techStack: ['ReactJS', 'Tailwind CSS'],
-    description: 'Web development portofolio.'
+    description: 'Web development portfolio.'
   },
   Dev_6: {
     name: 'Widget Web APP',

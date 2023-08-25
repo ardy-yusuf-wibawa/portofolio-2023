@@ -3,17 +3,6 @@ import emailjs from '@emailjs/browser'
 import { inputList } from './layouts/Constants'
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    id: new Date().toLocaleString('en-US', {
-      timeZone: 'Asia/Jakarta',
-      timeZoneName: 'short'
-    }),
-    email: '',
-    subject: '',
-    message: ''
-  })
-
-  const apiKey = process.env.REACT_APP_GOOGLE_SPREADSHEET_API
   const serviceId = process.env.REACT_APP_YOUR_SERVICE_ID
   const templateId = process.env.REACT_APP_YOUR_TEMPLATE_ID
   const publicKey = process.env.REACT_APP_YOUR_PUBLIC_KEY
@@ -26,44 +15,22 @@ const ContactUs = () => {
   }
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault() // Prevent the default form submission behavior
 
-    if (!apiKey || !serviceId || !templateId || !publicKey) {
-      alert('One or more environment variables are not defined')
+    if (!serviceId || !templateId || !publicKey) {
+      alert('One or more environment variables are not defined') // Alert the user if any required environment variables are missing
       return
     }
-    if (form.current != null) {
-      emailjs.sendForm(serviceId, templateId, form.current, publicKey).then()
-    }
-
-    setSubmissionStatus('pending')
 
     try {
-      const response = await fetch(apiKey, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-
-      if (response) {
-        setSubmissionStatus('success')
-      } else {
-        setSubmissionStatus('error')
+      setSubmissionStatus('pending') // Set the submission status to pending
+      if (form.current != null) {
+        const result = await emailjs.sendForm(serviceId, templateId, form.current, publicKey) // Send the form data using emailjs
+        setSubmissionStatus('success', result) // Set the submission status to success
       }
     } catch (error) {
-      console.error(error)
-      setSubmissionStatus('error')
+      setSubmissionStatus('error', error) // Set the submission status to error if an error occurs during form submission
     }
-  }
-
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    })
   }
 
   const getStatusMessage = () => {
@@ -182,7 +149,7 @@ const ContactUs = () => {
           Contact Us
         </h2>
         <p className='mb-8 text-center font-light text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16'>
-          Interested in working together with me? Do you want me to colaboration with you? Leave an
+          Interested in working together with me? Do you want me to collaboration with you? Leave an
           email or contact me directly.
         </p>
         <form
@@ -202,8 +169,6 @@ const ContactUs = () => {
                   type={list.type}
                   id={list.name}
                   name={list.name}
-                  value={formData[list.name]}
-                  onChange={handleChange}
                   required
                   className='dark:shadow-sm-light block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-red-500 focus:ring-red-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-red-500 dark:focus:ring-red-500'
                 />
@@ -220,8 +185,6 @@ const ContactUs = () => {
               autoComplete='on'
               id='message'
               name='message'
-              value={formData.message}
-              onChange={handleChange}
               required
               className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-red-500 focus:ring-red-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-red-500 dark:focus:ring-red-500'
             />

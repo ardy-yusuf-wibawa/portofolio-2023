@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'flowbite-react'
-import { myDev } from '../datas/dev'
+import { myDev } from '../data/dev'
 import { Link } from 'react-router-dom'
 
 const techStackColors = {
