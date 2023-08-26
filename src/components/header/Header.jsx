@@ -28,7 +28,7 @@ function Header() {
         <div className='w-shrink my-auto flex flex-row items-center justify-between gap-4'>
           <SvgIcon />
         </div>
-      </div>
+      </div> 
       <div className='block lg:hidden'>
         <HamburgerBar />
       </div>
