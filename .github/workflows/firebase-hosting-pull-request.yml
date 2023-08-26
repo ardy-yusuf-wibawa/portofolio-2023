@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm ci && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - run: firebase deploy
+
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARDYYUSUF }}'
