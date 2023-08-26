@@ -35,19 +35,19 @@ const HeroImg = () => {
         <div className='md:block w-[74%] pt-[10px] hidden'>
           <Carousel>
             <img
-              src='./img/html.jpg'
+              src='./img/html.webp'
               alt='...'
             />
             <img
-              src='./img/css.jpg'
+              src='./img/css.webp'
               alt='...'
             />
             <img
-              src='./img/tailwind.jpg'
+              src='./img/tailwind.webp'
               alt='...'
             />
             <img
-              src='./img/React.jpg'
+              src='./img/React.webp'
               alt='...'
             />
           </Carousel>

@@ -16,12 +16,12 @@ const techStackColors = {
 }
 
 const TechStackTag = ({ techStack }) => {
-  const colorClass = `bg-${techStackColors[techStack]}-300`
+  const bgColorClass = `bg-${techStackColors[techStack]}-300`
   const textColorClass = `text-${techStackColors[techStack]}-800`
 
   return (
     <span
-      className={`mr-2 rounded ${colorClass} px-2.5 py-0.5 text-xs font-medium ${textColorClass}`}>
+      className={`mr-2 rounded ${bgColorClass} px-2.5 py-0.5 text-xs font-medium ${textColorClass}`}>
       {techStack}
     </span>
   )
@@ -76,7 +76,6 @@ const CardComp = () => {
     <div className='lg:w-(90%) container mx-auto grid w-[1/4] grid-rows-1 gap-[4vw] px-4 pb-10 sm:w-full sm:grid-cols-2 sm:gap-[2.3vw]  sm:py-10'>
       {projectData.map((value, index) => (
         <Card
-          loading='lazy'
           key={index}
           imgAlt={value.name}
           imgSrc={value.img}>
