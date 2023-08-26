@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card } from 'flowbite-react'
-import { myDev } from '../data/dev'
 import { Link } from 'react-router-dom'
 
 const techStackColors = {
@@ -49,37 +48,58 @@ const LinkPath = ({ paths }) => {
 }
 
 const CardComp = () => {
+  const apiProject = process.env.REACT_APP_GOOGLE_SPREADSHEET_API_PROJECT
+  const [projectData, setProjectData] = useState([])
+
+  useEffect(() => {
+    const fetchProjectData = async () => {
+      try {
+        const projectResponse = await fetch(apiProject)
+        const dataProject = await projectResponse.json()
+
+        // Parsing the JSON strings into arrays
+        const projectsWithArrays = dataProject.map((project) => ({
+          ...project,
+          paths: JSON.parse(project.paths),
+          techStack: JSON.parse(project.techStack)
+        }))
+
+        setProjectData(projectsWithArrays)
+      } catch (error) {
+        console.error('error fetching data:', error)
+      }
+    }
+    fetchProjectData()
+  }, [])
+
   return (
     <div className='lg:w-(90%) container mx-auto grid w-[1/4] grid-rows-1 gap-[4vw] px-4 pb-10 sm:w-full sm:grid-cols-2 sm:gap-[2.3vw]  sm:py-10'>
-      {Object.keys(myDev).map((key, i) => {
-        const dev = myDev[key]
-
-        return (
-          <Card
-            key={i}
-            imgAlt={dev.name}
-            imgSrc={dev.img}>
-            <h5 className='flex items-start justify-start text-base font-bold tracking-tight text-gray-900 dark:text-white sm:text-2xl'>
-              {dev.name}
-            </h5>
-            <p className='hidden text-ellipsis font-normal text-gray-700 dark:text-gray-400 sm:block'>
-              {dev.description}
-            </p>
-            <LinkPath paths={dev.paths} />
-            <div className='container grid max-w-[35rem] gap-1 sm:gap-2 lg:grid-cols-5'>
-              {dev.techStack.map(
-                (techStack, index) =>
-                  index < 5 && (
-                    <TechStackTag
-                      key={index}
-                      techStack={techStack}
-                    />
-                  )
-              )}
-            </div>
-          </Card>
-        )
-      })}
+      {projectData.map((value, index) => (
+        <Card
+          loading='lazy'
+          key={index}
+          imgAlt={value.name}
+          imgSrc={value.img}>
+          <h5 className='flex items-start justify-start text-base font-bold tracking-tight text-gray-900 dark:text-white sm:text-2xl'>
+            {value.name}
+          </h5>
+          <p className='hidden text-ellipsis font-normal text-gray-700 dark:text-gray-400 sm:block'>
+            {value.desc}
+          </p>
+          <LinkPath paths={value.paths} />
+          <div className='container grid max-w-[35rem] gap-1 sm:gap-2 lg:grid-cols-5'>
+            {value.techStack.map(
+              (techStack, index) =>
+                index < 5 && (
+                  <TechStackTag
+                    key={index}
+                    techStack={techStack}
+                  />
+                )
+            )}
+          </div>
+        </Card>
+      ))}
     </div>
   )
 }

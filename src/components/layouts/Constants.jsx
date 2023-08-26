@@ -8,8 +8,8 @@ export const navList = [
     path: '/about'
   },
   {
-    name: 'Portofolio',
-    path: '/portofolio'
+    name: 'Portfolio',
+    path: '/portfolio'
   }
 ]
 

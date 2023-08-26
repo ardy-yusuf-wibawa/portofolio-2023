@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const TimeLine = () => {
-  const [timelineData, setTimelineData] = useState([])
+  const [timeLineData, setTimeLineData] = useState([])
   const apiKey = process.env.REACT_APP_GOOGLE_SPREADSHEET_API
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const TimeLine = () => {
       try {
         const response = await fetch(apiKey)
         const data = await response.json()
-        setTimelineData(data)
+        setTimeLineData(data)
       } catch (error) {
         console.error('Error fetching data:', error)
       }
@@ -22,7 +22,7 @@ const TimeLine = () => {
     <>
       <ol className='relative border-l border-gray-200 pt-10 dark:border-gray-700'>
         <span className='flex p-5 text-xl font-bold'>Experience</span>
-        {timelineData.map((value, index) => (
+        {timeLineData.map((value, index) => (
           <li
             key={index}
             className='mb-10 ml-6'>
