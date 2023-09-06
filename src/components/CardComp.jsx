@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Card } from 'flowbite-react'
+import { Card, Badge } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 
 const techStackColors = {
@@ -16,14 +16,14 @@ const techStackColors = {
 }
 
 const TechStackTag = ({ techStack }) => {
-  const bgColorClass = `bg-${techStackColors[techStack]}-300`
-  const textColorClass = `text-${techStackColors[techStack]}-800`
+  const bgColorClass = `${techStackColors[techStack]}`
 
   return (
-    <span
-      className={`mr-2 rounded ${bgColorClass} px-2.5 py-0.5 text-xs font-medium ${textColorClass}`}>
+    <Badge
+      color={`${bgColorClass}`}
+      size='sm'>
       {techStack}
-    </span>
+    </Badge>
   )
 }
 
