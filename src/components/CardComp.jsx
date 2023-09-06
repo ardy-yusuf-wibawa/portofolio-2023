@@ -18,7 +18,6 @@ const techStackColors = {
 const TechStackTag = ({ techStack }) => {
   const bgColorClass = `${techStackColors[techStack]}`
 
-
   return (
     <Badge
       color={`${bgColorClass}`}
